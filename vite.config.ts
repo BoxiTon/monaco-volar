@@ -2,9 +2,17 @@ import { defineConfig } from "vite";
 import * as path from "path";
 
 export default defineConfig({
+  server: {
+    host: true,
+    port: 5173
+  },
   base: "/monaco-volar/",
   optimizeDeps: {
-    include: ["path-browserify", "@vue/language-service", "monaco-editor-core"],
+    include: [
+      "path-browserify",
+      "@volar/vue-language-service",
+      "monaco-editor",
+    ],
   },
   resolve: {
     alias: {
